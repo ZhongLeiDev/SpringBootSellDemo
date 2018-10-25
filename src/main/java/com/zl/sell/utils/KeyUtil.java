@@ -13,7 +13,7 @@ public class KeyUtil {
      * 格式：时间+随机数
      * @return
      */
-    public static synchronized String getUniqueKey() {
+    public static synchronized String genUniqueKey() {
         Random random = new Random();
         int a = random.nextInt(900000) + 100000;    // 6 位随机数生成
         return System.currentTimeMillis() + String.valueOf(a);
