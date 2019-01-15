@@ -1,6 +1,8 @@
 package com.zl.sell.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.zl.sell.dataobject.OrderDetail;
+import com.zl.sell.utils.serializer.Data2LongSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -38,9 +40,11 @@ public class OrderDTO {
     private Integer payStatus;
 
     /**创建时间*/
+    @JsonSerialize(using = Data2LongSerializer.class)
     private Date createTime;
 
     /**更新时间*/
+    @JsonSerialize(using = Data2LongSerializer.class)
     private Date updateTime;
 
     /**订单详情列表*/
